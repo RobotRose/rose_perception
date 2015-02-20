@@ -10,7 +10,7 @@
 *	description
 * 
 ***********************************************************************************/
-#include "point_extractor_node.hpp"
+#include "rose_point_extractor/point_extractor_node.hpp"
 
 int main( int argc, char **argv )
 {

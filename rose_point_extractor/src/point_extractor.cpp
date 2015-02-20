@@ -11,7 +11,7 @@
 *	cloud. This selection is made in the 2D camera view of the camera.
 *	 
 ***********************************************************************************/
-#include "point_extractor.hpp"
+#include "rose_point_extractor/point_extractor.hpp"
 
 PointExtractor::PointExtractor( std::string name, ros::NodeHandle n )
 	: name_ ( name )
