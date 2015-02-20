@@ -11,7 +11,7 @@
 * 
 ***********************************************************************************/
 
-#include "bounding_box_finder_node.hpp"
+#include "rose_bounding_box_finder/bounding_box_finder_node.hpp"
 
 int main( int argc, char **argv )
 {

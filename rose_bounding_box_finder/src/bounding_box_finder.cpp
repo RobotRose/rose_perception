@@ -20,7 +20,7 @@
 *
 ***********************************************************************************/
 
-#include "bounding_box_finder.hpp"
+#include "rose_bounding_box_finder/bounding_box_finder.hpp"
 
 //Defines for VoxelGrid
 #define LEAF_SIZE           config_.leaf_size     // 0.01          //Meter

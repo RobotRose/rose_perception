@@ -11,7 +11,7 @@
 * 
 ***********************************************************************************/
 
-#include "bounding_box_convert_srv_node.hpp"
+#include "rose_bounding_box_finder/bounding_box_convert_srv_node.hpp"
 
 int main( int argc, char **argv )
 {

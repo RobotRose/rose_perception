@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(point_extractor)
+project(rose_point_extractor)
 
 set(CMAKE_CXX_FLAGS "-std=c++0x") 
 
@@ -34,8 +34,8 @@ catkin_package(
 
 include_directories( include ${catkin_INCLUDE_DIRS} )
 
-add_executable( point_extractor 	src/point_extractor_node.cpp
+add_executable( rose_point_extractor 	src/point_extractor_node.cpp
 									src/point_extractor.cpp
 )
-add_dependencies( point_extractor ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_generate_messages_cpp)
-target_link_libraries( point_extractor ${catkin_LIBRARIES} )
+add_dependencies( rose_point_extractor ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_generate_messages_cpp)
+target_link_libraries( rose_point_extractor ${catkin_LIBRARIES} )

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>bounding_box_finder</name>
+  <name>rose_bounding_box_finder</name>
   <version>0.0.0</version>
-  <description>The bounding_box_finder package</description>
+  <description>The rose_bounding_box_finder package</description>
 
   <maintainer email="hendriks@robot-rose.nl">Okke Hendriks</maintainer>
 

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(bounding_box_finder)
+project(rose_bounding_box_finder)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -87,7 +87,6 @@ add_service_files(
  generate_messages( DEPENDENCIES 
  	actionlib_msgs 
  	roscomm
- 	bounding_box_finder
  )
 
 
@@ -148,7 +147,7 @@ include_directories(
 # )
 
 ## Declare a cpp executable
-add_executable(bounding_box_finder src/bounding_box_finder_node.cpp
+add_executable(rose_bounding_box_finder src/bounding_box_finder_node.cpp
 								                    src/bounding_box_finder.cpp
 )
 
@@ -158,14 +157,14 @@ add_executable(bounding_box_convert_srv src/bounding_box_convert_srv_node.cpp
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-add_dependencies( bounding_box_finder ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_generate_messages_cpp
+add_dependencies( rose_bounding_box_finder ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_generate_messages_cpp
 ${PROJECT_NAME}_gencfg)
 
 add_dependencies( bounding_box_convert_srv ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_generate_messages_cpp
 ${PROJECT_NAME}_gencfg)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(bounding_box_finder
+target_link_libraries(rose_bounding_box_finder
   ${catkin_LIBRARIES}
   ${PCL_LIBRARIES}
 )

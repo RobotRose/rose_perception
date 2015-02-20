@@ -17,7 +17,7 @@
 *
 ***********************************************************************************/
 
-#include "bounding_box_convert_srv.hpp"
+#include "rose_bounding_box_finder/bounding_box_convert_srv.hpp"
 
 #define CAM_INFO_TOPIC 		"/camera/rgb/camera_info" 	//HARDCODED; Currently the rgb frame of kinect camera
 #define CAM_INFO_TIMEOUT 	3.0 //seconds
