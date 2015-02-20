@@ -1,0 +1,8 @@
+# Goal
+string 					script_id
+---
+# Result
+BoundingBoxVector BoundingBoxes
+---
+# Feedback
+string 					message

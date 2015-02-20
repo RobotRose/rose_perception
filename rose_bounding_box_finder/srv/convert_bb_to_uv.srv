@@ -1,0 +1,5 @@
+bounding_box_finder/BoundingBoxVector bounding_boxes
+---
+bounding_box_finder/uv_bounding_box[] uv_bounding_box
+int32 camera_height
+int32 camera_width

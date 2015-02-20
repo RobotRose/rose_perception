@@ -1,0 +1,13 @@
+<launch>
+	<!-- Do mapping argument -->
+    <arg name="mapping" default="false"/> 
+
+    <!-- Do not use machine files argument -->
+    <arg name="sim" default="false"/>
+
+    <!-- Hardware version -->
+    <arg name="hardware" default="simulation"/>
+
+  	<node machine="pc1" name="bounding_box_finder" pkg="bounding_box_finder" type="bounding_box_finder"></node>
+ 	<node machine="pc1" name="bounding_box_convert_srv" pkg="bounding_box_finder" type="bounding_box_convert_srv"></node>
+</launch>

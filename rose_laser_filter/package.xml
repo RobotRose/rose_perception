@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>rose_laser_filter</name>
+  <version>0.0.0</version>
+  <description>The rose_laser_filter package</description>
+
+  <maintainer email="langen@robot-rose.nl">Mathijs de Langen</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>sensor_msgs</build_depend>
+
+  <run_depend>sensor_msgs</run_depend>
+
+  <export>
+
+  </export>
+</package>
