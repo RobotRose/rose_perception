@@ -47,8 +47,8 @@ void BoundingBoxConvertSrv::CB_camera_info_topic( const sensor_msgs::CameraInfo:
 }
 
 bool
-BoundingBoxConvertSrv::convertService(	bounding_box_finder::convert_bb_to_uv::Request 	&req,	
-										bounding_box_finder::convert_bb_to_uv::Response &res )
+BoundingBoxConvertSrv::convertService(	rose_bounding_box_finder::convert_bb_to_uv::Request 	&req,	
+										rose_bounding_box_finder::convert_bb_to_uv::Response &res )
 {
 	//ROS_INFO("[%s] Received Request.", ros::this_node::getName().c_str());
 	//ROS_DEBUG_STREAM("BoundingBox Info: " << req.bounding_box);
@@ -77,7 +77,7 @@ BoundingBoxConvertSrv::convertService(	bounding_box_finder::convert_bb_to_uv::Re
 }
 
 pcl::PointXYZ
-BoundingBoxConvertSrv::calculateFTLCornerpoint(bounding_box_finder::BoundingBox bounding_box)
+BoundingBoxConvertSrv::calculateFTLCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box)
 {
 	pcl::PointXYZ ftl;
 
@@ -89,7 +89,7 @@ BoundingBoxConvertSrv::calculateFTLCornerpoint(bounding_box_finder::BoundingBox 
 }
 
 pcl::PointXYZ
-BoundingBoxConvertSrv::calculateFTRCornerpoint(bounding_box_finder::BoundingBox bounding_box)
+BoundingBoxConvertSrv::calculateFTRCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box)
 {
 	pcl::PointXYZ ftr;
 
@@ -101,7 +101,7 @@ BoundingBoxConvertSrv::calculateFTRCornerpoint(bounding_box_finder::BoundingBox 
 }
 
 pcl::PointXYZ
-BoundingBoxConvertSrv::calculateFBRCornerpoint(bounding_box_finder::BoundingBox bounding_box)
+BoundingBoxConvertSrv::calculateFBRCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box)
 {
 	pcl::PointXYZ fbr;
 
@@ -113,7 +113,7 @@ BoundingBoxConvertSrv::calculateFBRCornerpoint(bounding_box_finder::BoundingBox 
 }
 
 pcl::PointXYZ
-BoundingBoxConvertSrv::calculateFBLCornerpoint(bounding_box_finder::BoundingBox bounding_box)
+BoundingBoxConvertSrv::calculateFBLCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box)
 {
 	pcl::PointXYZ fbl;
 
@@ -125,7 +125,7 @@ BoundingBoxConvertSrv::calculateFBLCornerpoint(bounding_box_finder::BoundingBox 
 }
 
 pcl::PointXYZ
-BoundingBoxConvertSrv::calculateBTLCornerpoint(bounding_box_finder::BoundingBox bounding_box)
+BoundingBoxConvertSrv::calculateBTLCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box)
 {
 	pcl::PointXYZ btl;
 
@@ -137,7 +137,7 @@ BoundingBoxConvertSrv::calculateBTLCornerpoint(bounding_box_finder::BoundingBox 
 }
 
 pcl::PointXYZ
-BoundingBoxConvertSrv::calculateBTRCornerpoint(bounding_box_finder::BoundingBox bounding_box)
+BoundingBoxConvertSrv::calculateBTRCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box)
 {
 	pcl::PointXYZ btr;
 
@@ -149,7 +149,7 @@ BoundingBoxConvertSrv::calculateBTRCornerpoint(bounding_box_finder::BoundingBox 
 }
 
 pcl::PointXYZ
-BoundingBoxConvertSrv::calculateBBRCornerpoint(bounding_box_finder::BoundingBox bounding_box)
+BoundingBoxConvertSrv::calculateBBRCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box)
 {
 	pcl::PointXYZ bbr;
 
@@ -161,7 +161,7 @@ BoundingBoxConvertSrv::calculateBBRCornerpoint(bounding_box_finder::BoundingBox 
 }
 
 pcl::PointXYZ
-BoundingBoxConvertSrv::calculateBBLCornerpoint(bounding_box_finder::BoundingBox bounding_box)
+BoundingBoxConvertSrv::calculateBBLCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box)
 {
 	pcl::PointXYZ bbl;
 
@@ -174,7 +174,7 @@ BoundingBoxConvertSrv::calculateBBLCornerpoint(bounding_box_finder::BoundingBox 
 
 //Creates a PCl Pointcloud using the Pose and Dimensions of the BoundingBox
 pcl::PointCloud<pcl::PointXYZ>
-BoundingBoxConvertSrv::convertBBMsgToPointCloud(bounding_box_finder::BoundingBox bounding_box)
+BoundingBoxConvertSrv::convertBBMsgToPointCloud(rose_bounding_box_finder::BoundingBox bounding_box)
 {
 	pcl::PointCloud<pcl::PointXYZ> bb_cloud;
 	
@@ -222,10 +222,10 @@ BoundingBoxConvertSrv::convertBBMsgToPointCloud(bounding_box_finder::BoundingBox
 	return bb_cloud;    
 }
 
-bounding_box_finder::uv_point
+rose_bounding_box_finder::uv_point
 BoundingBoxConvertSrv::convertPCL3dPointToUVPoint(pcl::PointXYZ pcl_point)
 {
-	bounding_box_finder::uv_point uv_point;
+	rose_bounding_box_finder::uv_point uv_point;
 	cv::Point3d cv_3d_point;
 	cv::Point2i cv_2d_point;
 
@@ -241,10 +241,10 @@ BoundingBoxConvertSrv::convertPCL3dPointToUVPoint(pcl::PointXYZ pcl_point)
 	return uv_point;
 }
 
-bounding_box_finder::uv_bounding_box
+rose_bounding_box_finder::uv_bounding_box
 BoundingBoxConvertSrv::createUVBoundingBoxMsg(pcl::PointCloud<pcl::PointXYZ> bb_cloud)
 {
-	bounding_box_finder::uv_bounding_box uv_bounding_box;
+	rose_bounding_box_finder::uv_bounding_box uv_bounding_box;
 
 	for(int i = 0; i < bb_cloud.points.size(); i++)
 	{

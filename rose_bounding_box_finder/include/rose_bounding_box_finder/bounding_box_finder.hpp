@@ -78,7 +78,7 @@
 
 using namespace std;
 
-typedef ServerMultipleClient<bounding_box_finder::getboundingboxAction> SMC;
+typedef ServerMultipleClient<rose_bounding_box_finder::getboundingboxAction> SMC;
 
 struct BoundingBoxFinderConfig
 {
@@ -116,17 +116,17 @@ class BoundingBoxFinder
 		~BoundingBoxFinder();
 
 		void 
-	    CB_dynamicReconfigure(	bounding_box_finder::bounding_box_finderConfig &config, 
+	    CB_dynamicReconfigure(	rose_bounding_box_finder::bounding_box_finderConfig &config, 
 	    						uint32_t level);
 
 	    
 	private:
 		bool 
-		toggle( bounding_box_finder::toggle::Request  &req, 
-                bounding_box_finder::toggle::Response &res );
+		toggle( rose_bounding_box_finder::toggle::Request  &req, 
+                rose_bounding_box_finder::toggle::Response &res );
 
 	    void 
-	    CB_serverWork( const bounding_box_finder::getboundingboxGoalConstPtr &goal, 
+	    CB_serverWork( const rose_bounding_box_finder::getboundingboxGoalConstPtr &goal, 
 	    			   SMC* smc);
 	    
 	    void 
@@ -166,10 +166,10 @@ class BoundingBoxFinder
 	    Eigen::Vector4f 
 	    getCenterpointOfPointCloud( pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_in);
 
-	    bounding_box_finder::BoundingBox 
+	    rose_bounding_box_finder::BoundingBox 
 	    calculateOrientedBoundingBoxByRotation( pcl::PointCloud<pcl::PointXYZRGB>::Ptr  cloud_in);
 
-	    bounding_box_finder::BoundingBoxVector 
+	    rose_bounding_box_finder::BoundingBoxVector 
 	    createBoundingBoxVector( pcl::PointCloud<pcl::PointXYZRGB>::Ptr  cloud_in, 
 	     						 const std::vector<pcl::PointIndices>& cluster_indices);
 
@@ -178,17 +178,17 @@ class BoundingBoxFinder
 	    						  const std::vector<pcl::PointIndices>& cluster_indices);
 
 	    visualization_msgs::MarkerArray 
-	    createMarkerArrayFromBoundingBoxes( bounding_box_finder::BoundingBoxVector bounding_boxes);
+	    createMarkerArrayFromBoundingBoxes( rose_bounding_box_finder::BoundingBoxVector bounding_boxes);
 
 	    void 
-	    publishBoundingBoxes( bounding_box_finder::BoundingBoxVector bounding_boxes);
+	    publishBoundingBoxes( rose_bounding_box_finder::BoundingBoxVector bounding_boxes);
 
 	    void 
 	    publishColoredObjectClusterCloud( pcl::PointCloud<pcl::PointXYZRGB>::Ptr  cloud_in, 
 	     							      const std::vector<pcl::PointIndices>& cluster_indices);
 
 	    void 
-	    publishBoundingBoxesAsMarkers( bounding_box_finder::BoundingBoxVector bounding_boxes);
+	    publishBoundingBoxesAsMarkers( rose_bounding_box_finder::BoundingBoxVector bounding_boxes);
 
 	    bool 					config_initialized_;
 
@@ -206,12 +206,12 @@ class BoundingBoxFinder
 
 	    tf::TransformListener 	tf_;
 
-	    bounding_box_finder::BoundingBoxVector bounding_boxes_;
+	    rose_bounding_box_finder::BoundingBoxVector bounding_boxes_;
 
 	    BoundingBoxFinderConfig config_;
 
-	    dynamic_reconfigure::Server<bounding_box_finder::bounding_box_finderConfig> reconfigure_server_;
-  		dynamic_reconfigure::Server<bounding_box_finder::bounding_box_finderConfig>::CallbackType reconfigure_callback_ptr;
+	    dynamic_reconfigure::Server<rose_bounding_box_finder::bounding_box_finderConfig> reconfigure_server_;
+  		dynamic_reconfigure::Server<rose_bounding_box_finder::bounding_box_finderConfig>::CallbackType reconfigure_callback_ptr;
 
 	      	    
 };

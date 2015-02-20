@@ -51,7 +51,7 @@ BoundingBoxFinder::BoundingBoxFinder(string name, ros::NodeHandle  n)
 {  
     marker_pub_         = n_.advertise<visualization_msgs::MarkerArray> (name + "/markers", 1);
     clusters_pub_       = n_.advertise<sensor_msgs::PointCloud2> (name + "/clusters", 1);
-    bounding_boxes_pub_ = n_.advertise<bounding_box_finder::BoundingBoxVector> (name + "/bounding_box_vector", 1);
+    bounding_boxes_pub_ = n_.advertise<rose_bounding_box_finder::BoundingBoxVector> (name + "/bounding_box_vector", 1);
     //depth_points_sub_   = n_.subscribe ("/camera/depth_registered/points", 1, &BoundingBoxFinder::CB_depthPoints, this);
     //
     toggle_service_     = n_.advertiseService(name + "/toggle", &BoundingBoxFinder::toggle, this);
@@ -68,8 +68,8 @@ BoundingBoxFinder::~BoundingBoxFinder()
 
 }
 
-bool BoundingBoxFinder::toggle( bounding_box_finder::toggle::Request  &req, 
-                                bounding_box_finder::toggle::Response &res )
+bool BoundingBoxFinder::toggle( rose_bounding_box_finder::toggle::Request  &req, 
+                                rose_bounding_box_finder::toggle::Response &res )
 {
     ROS_DEBUG_NAMED(ROS_NAME, "BoundingBoxFinder::toggle-ing");
     if ( req.on )
@@ -84,7 +84,7 @@ bool BoundingBoxFinder::toggle( bounding_box_finder::toggle::Request  &req,
       depth_points_sub_.shutdown();
 
       // Publish an empty list of bounding boxes
-      bounding_box_finder::BoundingBoxVector bounding_boxes;
+      rose_bounding_box_finder::BoundingBoxVector bounding_boxes;
       publishBoundingBoxes(bounding_boxes);
       ROS_INFO_NAMED(ROS_NAME, "BoundingBoxFinder::toggle: turned OFF");
     }
@@ -94,7 +94,7 @@ bool BoundingBoxFinder::toggle( bounding_box_finder::toggle::Request  &req,
 
 //TODO add check for object_frame_name
 //causes bug in calculateOrientedBoundingBoxByRotation
-void BoundingBoxFinder::CB_dynamicReconfigure(bounding_box_finder::bounding_box_finderConfig &config, uint32_t level)
+void BoundingBoxFinder::CB_dynamicReconfigure(rose_bounding_box_finder::bounding_box_finderConfig &config, uint32_t level)
 {
     ROS_INFO_NAMED(ROS_NAME, "Reconfigure Request: %f %f %f %f %d %d %f %s %f %s", 
               config.leaf_size_param, 
@@ -311,14 +311,14 @@ BoundingBoxFinder::getCenterpointOfPointCloud(pcl::PointCloud<pcl::PointXYZRGB>:
 }
 
 //TODO transform whole clpoud instead of each cluster
-bounding_box_finder::BoundingBox 
+rose_bounding_box_finder::BoundingBox 
 BoundingBoxFinder::calculateOrientedBoundingBoxByRotation(pcl::PointCloud<pcl::PointXYZRGB>::Ptr  cloud_in)
 {
     //Timer
     pcl::console::TicToc tt;
     tt.tic();
 
-    bounding_box_finder::BoundingBox bounding_box;
+    rose_bounding_box_finder::BoundingBox bounding_box;
         
     //pcl compatible cloud
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr cluster_cloud (new pcl::PointCloud<pcl::PointXYZRGB>);
@@ -425,13 +425,13 @@ BoundingBoxFinder::calculateOrientedBoundingBoxByRotation(pcl::PointCloud<pcl::P
 }
 
 //TODO transform cloud before making calculating seperate bouding boxes
-bounding_box_finder::BoundingBoxVector
+rose_bounding_box_finder::BoundingBoxVector
 BoundingBoxFinder::createBoundingBoxVector(pcl::PointCloud<pcl::PointXYZRGB>::Ptr  cloud_in, const std::vector<pcl::PointIndices>& cluster_indices)
 {
     pcl::console::TicToc tt;
     tt.tic();
 
-    bounding_box_finder::BoundingBoxVector bounding_boxes;
+    rose_bounding_box_finder::BoundingBoxVector bounding_boxes;
     //ROS_INFO_STREAM("createBoundingBoxVector cloud_in frame ID: " << cloud_in->header.frame_id);
     for(int i = 0; i < cluster_indices.size(); i++)
     {
@@ -479,7 +479,7 @@ void BoundingBoxFinder::colorCloudBasedOnIndices(pcl::PointCloud<pcl::PointXYZRG
 }
 
 visualization_msgs::MarkerArray
-BoundingBoxFinder::createMarkerArrayFromBoundingBoxes(bounding_box_finder::BoundingBoxVector bounding_boxes)
+BoundingBoxFinder::createMarkerArrayFromBoundingBoxes(rose_bounding_box_finder::BoundingBoxVector bounding_boxes)
 {
     visualization_msgs::MarkerArray markers;
 
@@ -523,7 +523,7 @@ BoundingBoxFinder::createMarkerArrayFromBoundingBoxes(bounding_box_finder::Bound
     return markers;
 }
 
-void BoundingBoxFinder::publishBoundingBoxes (bounding_box_finder::BoundingBoxVector bounding_boxes)
+void BoundingBoxFinder::publishBoundingBoxes (rose_bounding_box_finder::BoundingBoxVector bounding_boxes)
 {
     bounding_boxes_pub_.publish(bounding_boxes);
 }
@@ -540,7 +540,7 @@ void BoundingBoxFinder::publishColoredObjectClusterCloud (pcl::PointCloud<pcl::P
     clusters_pub_.publish(colored_clusters);
 }
 
-void BoundingBoxFinder::publishBoundingBoxesAsMarkers (bounding_box_finder::BoundingBoxVector bounding_boxes)
+void BoundingBoxFinder::publishBoundingBoxesAsMarkers (rose_bounding_box_finder::BoundingBoxVector bounding_boxes)
 {
     marker_pub_.publish(createMarkerArrayFromBoundingBoxes(bounding_boxes));
 }
@@ -598,7 +598,7 @@ BoundingBoxFinder::CB_depthPoints (const sensor_msgs::PointCloud2ConstPtr& input
 
 
 
-void BoundingBoxFinder::CB_serverWork( const bounding_box_finder::getboundingboxGoalConstPtr &goal, SMC* smc ){}
+void BoundingBoxFinder::CB_serverWork( const rose_bounding_box_finder::getboundingboxGoalConstPtr &goal, SMC* smc ){}
 void BoundingBoxFinder::CB_serverCancel( SMC* smc ){}
 
 

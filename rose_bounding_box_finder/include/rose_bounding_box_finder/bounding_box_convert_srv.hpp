@@ -61,40 +61,40 @@ class BoundingBoxConvertSrv
 
 		void CB_camera_info_topic( const sensor_msgs::CameraInfo::ConstPtr camera_info_msg );
 		bool
-		convertService(	bounding_box_finder::convert_bb_to_uv::Request 	&req,
-						bounding_box_finder::convert_bb_to_uv::Response &res);
+		convertService(	rose_bounding_box_finder::convert_bb_to_uv::Request 	&req,
+						rose_bounding_box_finder::convert_bb_to_uv::Response &res);
 		
 		pcl::PointXYZ
-		calculateFTLCornerpoint(bounding_box_finder::BoundingBox bounding_box);
+		calculateFTLCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box);
 
 		pcl::PointXYZ
-		calculateFTRCornerpoint(bounding_box_finder::BoundingBox bounding_box);
+		calculateFTRCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box);
 
 		pcl::PointXYZ
-		calculateFBRCornerpoint(bounding_box_finder::BoundingBox bounding_box);
+		calculateFBRCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box);
 
 		pcl::PointXYZ
-		calculateFBLCornerpoint(bounding_box_finder::BoundingBox bounding_box);
+		calculateFBLCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box);
 
 		pcl::PointXYZ
-		calculateBTLCornerpoint(bounding_box_finder::BoundingBox bounding_box);
+		calculateBTLCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box);
 
 		pcl::PointXYZ
-		calculateBTRCornerpoint(bounding_box_finder::BoundingBox bounding_box);
+		calculateBTRCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box);
 
 		pcl::PointXYZ
-		calculateBBRCornerpoint(bounding_box_finder::BoundingBox bounding_box);
+		calculateBBRCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box);
 
 		pcl::PointXYZ
-		calculateBBLCornerpoint(bounding_box_finder::BoundingBox bounding_box);
+		calculateBBLCornerpoint(rose_bounding_box_finder::BoundingBox bounding_box);
 
 		pcl::PointCloud<pcl::PointXYZ>
-		convertBBMsgToPointCloud(bounding_box_finder::BoundingBox bounding_box);
+		convertBBMsgToPointCloud(rose_bounding_box_finder::BoundingBox bounding_box);
 
-		bounding_box_finder::uv_point
+		rose_bounding_box_finder::uv_point
 		convertPCL3dPointToUVPoint(pcl::PointXYZ pcl_point);
 
-		bounding_box_finder::uv_bounding_box
+		rose_bounding_box_finder::uv_bounding_box
 		createUVBoundingBoxMsg(pcl::PointCloud<pcl::PointXYZ> bb_cloud);
 
 		ros::NodeHandle* 	n_;
