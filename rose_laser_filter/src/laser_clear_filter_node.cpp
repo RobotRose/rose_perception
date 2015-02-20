@@ -12,7 +12,7 @@
 ***********************************************************************************/
 
 #include <ros/ros.h>
-#include "laser_filter/laser_clear_filter.hpp"
+#include "rose_laser_filter/laser_clear_filter.hpp"
 
 int main(int argc, char *argv[])
 {
