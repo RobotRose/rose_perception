@@ -58,7 +58,7 @@ set(CMAKE_CXX_FLAGS "-std=c++0x -g") # TODO OH: -g is DEBUG FLAG
 
 #Settings for Dynamic reconfigure
 generate_dynamic_reconfigure_options(
-  cfg/bounding_box_finder.cfg
+  cfg/rose_bounding_box_finder.cfg
  )
 
 ## Generate messages in the 'msg' folder
