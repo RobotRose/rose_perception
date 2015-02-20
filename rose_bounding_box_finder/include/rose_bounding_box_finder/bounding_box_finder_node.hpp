@@ -18,7 +18,7 @@
 
 #include <ros/ros.h>
 
-#include "bounding_box_finder.hpp"
+#include "rose_bounding_box_finder/bounding_box_finder.hpp"
 
 using namespace std;
 

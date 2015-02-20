@@ -18,7 +18,7 @@
 
 #include <ros/ros.h>
 
-#include "bounding_box_convert_srv.hpp"
+#include "rose_bounding_box_finder/bounding_box_convert_srv.hpp"
 
 using namespace std;
 

@@ -68,7 +68,7 @@
 
 //Dynamic reconfigure
 #include <dynamic_reconfigure/server.h>
-#include <bounding_box_finder/bounding_box_finderConfig.h>
+#include <rose_bounding_box_finder/bounding_box_finderConfig.h>
 
 #include <math.h>
 #include <unistd.h>
