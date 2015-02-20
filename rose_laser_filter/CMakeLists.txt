@@ -3,14 +3,17 @@ project(rose_laser_filter)
 
 find_package(catkin 
 	REQUIRED
+		roscpp
 		sensor_msgs
 )
 
 catkin_package(
-	INCLUDE_DIRS include
+	INCLUDE_DIRS 
+		include
 	LIBRARIES
 	CATKIN_DEPENDS
-	sensor_msgs
+		roscpp
+		sensor_msgs
 #  DEPENDS system_lib
 )
 
