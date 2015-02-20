@@ -37,7 +37,7 @@
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 
-#include "point_extractor/get_point.h"
+#include "rose_point_extractor/get_point.h"
 
 #include "rose_common/common.hpp"
 
@@ -102,8 +102,8 @@ class PointExtractor
      * @param  res Result message (coints PointStamped)
      * @return     If the function was successful
      */
-  	bool CB_extract_point ( point_extractor::get_point::Request  &req,	
-							point_extractor::get_point::Response &res);
+  	bool CB_extract_point ( rose_point_extractor::get_point::Request  &req,	
+							rose_point_extractor::get_point::Response &res);
 
     /**
      * Callback when a new point cloud is available

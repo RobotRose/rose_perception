@@ -146,8 +146,8 @@ bool PointExtractor::filterOnOutliers( pcl::PointCloud<pcl::PointXYZ>& cloud )
 	return true;
 }
 
-bool PointExtractor::CB_extract_point ( point_extractor::get_point::Request  &req,	
-										point_extractor::get_point::Response &res )
+bool PointExtractor::CB_extract_point ( rose_point_extractor::get_point::Request  &req,	
+										rose_point_extractor::get_point::Response &res )
 {
 	ROS_DEBUG_NAMED(ROS_NAME, "Request received");
 
