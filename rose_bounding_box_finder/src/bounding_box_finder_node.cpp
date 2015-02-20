@@ -34,8 +34,8 @@ int main( int argc, char **argv )
   // Create a new ScriptInteractionNode object.
   BoundingBoxFinder* bounding_box_finder = new BoundingBoxFinder("bounding_box_finder", n);
   
-  //dynamic_reconfigure::Server<rose_bounding_box_finder::bounding_box_finderConfig> server_;
-  //dynamic_reconfigure::Server<rose_bounding_box_finder::bounding_box_finderConfig>::CallbackType f;
+  //dynamic_reconfigure::Server<rose_bounding_box_finder::rose_bounding_box_finderConfig> server_;
+  //dynamic_reconfigure::Server<rose_bounding_box_finder::rose_bounding_box_finderConfig>::CallbackType f;
 
   //f = boost::bind(&BoundingBoxFinder::CB_dynamicReconfigure, bounding_box_finder, _1, _2);
   //server_.setCallback(f);

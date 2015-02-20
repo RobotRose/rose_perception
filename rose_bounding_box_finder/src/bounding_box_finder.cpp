@@ -94,7 +94,7 @@ bool BoundingBoxFinder::toggle( rose_bounding_box_finder::toggle::Request  &req,
 
 //TODO add check for object_frame_name
 //causes bug in calculateOrientedBoundingBoxByRotation
-void BoundingBoxFinder::CB_dynamicReconfigure(rose_bounding_box_finder::bounding_box_finderConfig &config, uint32_t level)
+void BoundingBoxFinder::CB_dynamicReconfigure(rose_bounding_box_finder::rose_bounding_box_finderConfig &config, uint32_t level)
 {
     ROS_INFO_NAMED(ROS_NAME, "Reconfigure Request: %f %f %f %f %d %d %f %s %f %s", 
               config.leaf_size_param, 

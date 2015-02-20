@@ -68,7 +68,7 @@
 
 //Dynamic reconfigure
 #include <dynamic_reconfigure/server.h>
-#include <rose_bounding_box_finder/bounding_box_finderConfig.h>
+#include <rose_bounding_box_finder/rose_bounding_box_finderConfig.h>
 
 #include <math.h>
 #include <unistd.h>
@@ -116,7 +116,7 @@ class BoundingBoxFinder
 		~BoundingBoxFinder();
 
 		void 
-	    CB_dynamicReconfigure(	rose_bounding_box_finder::bounding_box_finderConfig &config, 
+	    CB_dynamicReconfigure(	rose_bounding_box_finder::rose_bounding_box_finderConfig &config, 
 	    						uint32_t level);
 
 	    
@@ -210,8 +210,8 @@ class BoundingBoxFinder
 
 	    BoundingBoxFinderConfig config_;
 
-	    dynamic_reconfigure::Server<rose_bounding_box_finder::bounding_box_finderConfig> reconfigure_server_;
-  		dynamic_reconfigure::Server<rose_bounding_box_finder::bounding_box_finderConfig>::CallbackType reconfigure_callback_ptr;
+	    dynamic_reconfigure::Server<rose_bounding_box_finder::rose_bounding_box_finderConfig> reconfigure_server_;
+  		dynamic_reconfigure::Server<rose_bounding_box_finder::rose_bounding_box_finderConfig>::CallbackType reconfigure_callback_ptr;
 
 	      	    
 };
