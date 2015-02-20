@@ -11,7 +11,7 @@
 * 
 ***********************************************************************************/
 
-#include "laser_filter/laser_clear_filter.hpp"
+#include "rose_laser_filter/laser_clear_filter.hpp"
 
 LaserClearFilter::LaserClearFilter(ros::NodeHandle n)
 {
