@@ -37,13 +37,13 @@
 #include <image_geometry/pinhole_camera_model.h>
 
 //Service definition
-#include "bounding_box_finder/convert_bb_to_uv.h"
+#include "rose_bounding_box_finder/convert_bb_to_uv.h"
 
 //Bounding Box msgs
-#include "bounding_box_finder/BoundingBox.h"
-#include "bounding_box_finder/BoundingBoxVector.h"
-#include "bounding_box_finder/uv_point.h"
-#include "bounding_box_finder/uv_bounding_box.h"
+#include "rose_bounding_box_finder/BoundingBox.h"
+#include "rose_bounding_box_finder/BoundingBoxVector.h"
+#include "rose_bounding_box_finder/uv_point.h"
+#include "rose_bounding_box_finder/uv_bounding_box.h"
 
 #include <math.h>
 #include <unistd.h>

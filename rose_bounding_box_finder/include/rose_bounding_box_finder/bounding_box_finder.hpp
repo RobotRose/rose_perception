@@ -54,17 +54,17 @@
 #include "std_msgs/String.h"
 
 //Action msgs
-#include "bounding_box_finder/getboundingboxAction.h"
-#include "bounding_box_finder/getboundingboxGoal.h"
-#include "bounding_box_finder/getboundingboxFeedback.h"
-#include "bounding_box_finder/getboundingboxResult.h"
+#include "rose_bounding_box_finder/getboundingboxAction.h"
+#include "rose_bounding_box_finder/getboundingboxGoal.h"
+#include "rose_bounding_box_finder/getboundingboxFeedback.h"
+#include "rose_bounding_box_finder/getboundingboxResult.h"
 
 //Servive msgs
-#include "bounding_box_finder/toggle.h"
+#include "rose_bounding_box_finder/toggle.h"
 
 //Bounding Box msgs
-#include "bounding_box_finder/BoundingBox.h"
-#include "bounding_box_finder/BoundingBoxVector.h"
+#include "rose_bounding_box_finder/BoundingBox.h"
+#include "rose_bounding_box_finder/BoundingBoxVector.h"
 
 //Dynamic reconfigure
 #include <dynamic_reconfigure/server.h>
