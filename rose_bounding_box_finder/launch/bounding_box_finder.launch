@@ -8,6 +8,6 @@
     <!-- Hardware version -->
     <arg name="hardware" default="simulation"/>
 
-  	<node machine="pc1" name="bounding_box_finder" pkg="bounding_box_finder" type="bounding_box_finder"></node>
- 	<node machine="pc1" name="bounding_box_convert_srv" pkg="bounding_box_finder" type="bounding_box_convert_srv"></node>
+  	<node machine="pc1" name="rose_bounding_box_finder" pkg="rose_bounding_box_finder" type="rose_bounding_box_finder"></node>
+ 	<node machine="pc1" name="bounding_box_convert_srv" pkg="rose_bounding_box_finder" type="bounding_box_convert_srv"></node>
 </launch>
