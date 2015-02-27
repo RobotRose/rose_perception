@@ -6,7 +6,7 @@
 <arg name="ed_config" default="$(find ed)/config/rose.yaml"/>
 
 <env name="ED_PLUGIN_PATH" value="$(find ed)/../../devel/lib"/>
-<node name="ed_server" pkg="ed" type="ed_server" args="$(arg ed_config)" output="screen" />
+<node name="ed" pkg="ed" type="ed" args="$(arg ed_config)" output="screen" />
 
 <include file="$(find rose21_urdf)/launch/description.launch"/>
 
