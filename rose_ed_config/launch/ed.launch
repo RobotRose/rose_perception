@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+
+<arg name="launch_kinect" default="false"/>
+<arg name="launch_rgbd" default="true"/>
+<arg name="ed_config" default="$(find ed)/config/rose.yaml"/>
+
+<env name="ED_PLUGIN_PATH" value="$(find ed)/../../devel/lib"/>
+<node name="ed_server" pkg="ed" type="ed_server" args="$(arg ed_config)" output="screen" />
+
+<!-- KINECT -->
+<group if="$(arg launch_kinect)">
+    <include file="$(find openni_launch)/launch/openni.launch"/>
+</group>
+
+<!-- RGBD SERVER -->
+<group if="$(arg launch_rgbd)">
+    <include file="$(find rgbd)/launch/standard_kinect.launch"/>
+</group>
+
+</launch>
