@@ -9,6 +9,9 @@
 <node name="ed" pkg="ed" type="ed" args="$(arg ed_config)" output="screen" />
 <node name="ed_rviz_publisher" pkg="ed_gui_server" type="ed_rviz_publisher" />
 
+<node name="relay_planner_maps" pkg="topic_tools" type="relay" args="/ed/navigation/map /map_planner"/> 
+<node name="relay_localization_maps" pkg="topic_tools" type="relay" args="/ed/navigation/map /map"/> 
+
 <include file="$(find rose21_urdf)/launch/description.launch"/>
 
 <!-- KINECT -->
