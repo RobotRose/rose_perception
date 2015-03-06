@@ -38,39 +38,12 @@ world_name: rosebv
 perception:
     fit_shapes: 1
     model_list: all_models.yml
-    # modules:
-#    -  lib: libsize_matcher.so
-#    -  lib: libed_odu_finder.so
-#    -  lib: libcolor_matcher.so
-#    -  lib: libhuman_contour_matcher.so
-    # -  lib: libface_detector.so
-    # -  lib: libtype_aggregator.so
 
 plugins:
 - name: gui_server
   lib: libed_gui_server_plugin.so
   parameters:
       robot_name: rose
-# - name: builder
-#   lib: libed_builder_plugin.so
-#- name: obstacle_grid_publisher
-#  lib: libed_occupancy_grid_publisher_plugin.so
-#  parameters:
-#      frequency: 10
-#      resolution: 0.05
-#      topic: /map_planner
-#      frame_id: /map
-#      sim_time: 1.0
-#      object_persistence_time: 10
-#- name: loc_grid_publisher
-#  lib: libed_occupancy_grid_publisher_plugin.so
-#  parameters:
-#      frequency: 1
-#      resolution: 0.025
-#      topic: /map
-#      frame_id: /map
-#      specifier: localizable
-#      sim_time: 0.0
 - name: navigation
   lib: libed_navigation_plugin.so
   parameters:
@@ -83,17 +56,6 @@ plugins:
   lib: libed_tf_publisher_plugin.so
   parameters:
       root_frame_id: /map
-#- name: amigo_plugin
-#  lib: libed_robot_plugin.so
-#  parameters:
-#      frequency: 100
-#      robot_name: amigo
-#      urdf_rosparam: /amigo/robot_description
-#      joint_topics:
-#          - topic: /amigo/torso/measurements
-#          - topic: /amigo/left_arm/measurements
-#          - topic: /amigo/right_arm/measurements
-#          - topic: /amigo/neck/measurements
 - name: localization
   lib: libed_localization_plugin.so
   parameters:
