@@ -3,10 +3,10 @@
 
 <arg name="launch_kinect" default="false"/>
 <arg name="launch_rgbd" default="true"/>
-<arg name="ed_config" default="$(find ed)/config/rose.yaml"/>
+<arg name="ed_config" default="$(find rose_ed_config)/config/rose.yaml"/>
 
 <env name="ED_PLUGIN_PATH" value="$(find ed)/../../devel/lib"/>
-<node name="ed" pkg="ed" type="ed" args="$(arg ed_config)" output="screen" />
+<node name="ed" pkg="ed" type="ed" args="$(arg ed_config)" output="screen"/>
 <node name="ed_rviz_publisher" pkg="ed_gui_server" type="ed_rviz_publisher" />
 
 <include file="$(find rose21_urdf)/launch/description.launch"/>
