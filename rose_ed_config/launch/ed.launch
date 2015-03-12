@@ -6,8 +6,8 @@
 <arg name="ed_config" default="$(find rose_ed_config)/config/rose.yaml"/>
 
 <env name="ED_PLUGIN_PATH" value="$(find ed)/../../devel/lib"/>
-<node name="ed" pkg="ed" type="ed" args="$(arg ed_config)" output="screen"/>
-<node name="ed_rviz_publisher" pkg="ed_gui_server" type="ed_rviz_publisher" />
+<node name="ed" pkg="ed" type="ed" args="$(arg ed_config)" output="screen" machine="pc1"/>
+<node name="ed_rviz_publisher" pkg="ed_gui_server" type="ed_rviz_publisher" machine="pc1"/>
 
 <node name="relay_planner_maps" pkg="topic_tools" type="relay" args="/ed/navigation/map /map_planner"/> 
 <node name="relay_localization_maps" pkg="topic_tools" type="relay" args="/ed/navigation/map /map"/> 
