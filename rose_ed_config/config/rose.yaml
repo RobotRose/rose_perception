@@ -22,13 +22,13 @@ plugins:
   lib: libed_tf_publisher_plugin.so
   parameters:
       root_frame_id: /map
-# - name: robot_plugin
-#   lib: libed_robot_plugin.so
-#   parameters:
-#       robot_name: amigo
-#       urdf_rosparam: /amigo/robot_description
-#       joint_topics:
-#         - topic: /amigo/joint_states
+- name: robot_plugin
+  lib: libed_robot_plugin.so
+  parameters:
+      robot_name: rose
+      urdf_rosparam: /rose/robot_description
+      joint_topics:
+        - topic: /rose/joint_states
 - name: kinect_integration
   lib: libed_kinect_plugin.so
   parameters:
