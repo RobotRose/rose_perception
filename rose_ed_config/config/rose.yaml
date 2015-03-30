@@ -60,4 +60,8 @@ plugins:
         parameters:
             tolerance: 0.035
             min_cluster_size: 20
+<<<<<<< HEAD
             visualize: 0
+=======
+            visualize: 0
+>>>>>>> 8667a35cd997ef1d509c7a11be169b6ac0c1591c
