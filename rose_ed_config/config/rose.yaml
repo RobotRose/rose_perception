@@ -28,7 +28,7 @@ plugins:
       robot_name: rose
       urdf_rosparam: /rose/robot_description
       joint_topics:
-        - topic: /rose/joint_states
+        - topic: /joint_states
 - name: kinect_integration
   lib: libed_kinect_plugin.so
   parameters:

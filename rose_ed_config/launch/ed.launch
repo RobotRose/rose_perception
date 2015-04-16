@@ -12,7 +12,7 @@
 <node name="relay_planner_maps" pkg="topic_tools" type="relay" args="/ed/navigation/map /map_planner"/> 
 <node name="relay_localization_maps" pkg="topic_tools" type="relay" args="/ed/navigation/map /map"/> 
 
-<include file="$(find rose21_urdf)/launch/description.launch"/>
+<include file="$(find rose21_urdf)/launch/state_publisher.launch"/>
 
 <!-- KINECT -->
 <group if="$(arg launch_kinect)">
